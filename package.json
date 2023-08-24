@@ -1,0 +1,27 @@
+{
+  "name": "serverless-blog-api",
+  "version": "1.0.0",
+  "description": "A simple serverless blog API using Google Cloud Functions, MongoDB, and Node.js. This project will allow you to create, read, update, and delete blog posts through API endpoints, showcasing your backend and serverless architecture skills.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx functions-framework --target=posts"
+  },
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.3.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongodb": "^5.8.0",
+    "mongoose": "^7.4.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jay-agrawat/serverless-blog-api.git"
+  },
+  "author": "jayesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jay-agrawat/serverless-blog-api/issues"
+  },
+  "homepage": "https://github.com/jay-agrawat/serverless-blog-api#readme"
+}

@@ -32,10 +32,10 @@ Follow these steps to set up and run the API:
 
 1. Clone the project repository:
    ```sh
-   git clone <repository-url>
+   git clone https://github.com/jay-agrawat/serverless-blog-api
    cd serverless-blog-api
    ```
-
+   Note : Currently Above Repository is Private
 2. Install the project dependencies:
    ```sh
    npm install
@@ -49,6 +49,9 @@ Follow these steps to set up and run the API:
 
 4. Deploy the Cloud Functions:
    Deploy the Cloud Functions using the Google Cloud SDK or other deployment methods.
+   ```
+   gcloud functions deploy blog_api_v1 --gen2 --runtime=nodejs20 --region=us-central1 --source=. --entry-point=app --trigger-http --allow-unauthenticated --memory 512Mi --max-instances=1
+   ```
 
 ## Endpoints
 
@@ -110,7 +113,3 @@ Deploying the Cloud Functions can be done using the Google Cloud SDK or other de
 ## Conclusion
 
 The Serverless Blog API is a practical example of building a backend using Google Cloud Functions, MongoDB, and Node.js. It demonstrates how to implement CRUD operations and follows RESTful API design principles. Feel free to use this project as a foundation for learning and building more advanced applications.
-
----
-
-Please replace placeholders such as `<repository-url>` and `your-mongodb-uri` with the actual URLs and values. Additionally, consider expanding the documentation with more details about advanced features, security considerations, and other best practices relevant to your project.

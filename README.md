@@ -125,7 +125,7 @@ The API provides meaningful error responses for various scenarios, including mis
 
 Deploying the Cloud Functions can be done using the Google Cloud SDK or other deployment methods. Make sure to configure the necessary environment variables for connecting to your MongoDB instance.
 
-```json
+```
 gcloud functions deploy hello-node-function \
   --gen2 \      
   --runtime=nodejs20 \

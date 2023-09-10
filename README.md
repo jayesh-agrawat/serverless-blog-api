@@ -7,11 +7,12 @@ Welcome to the documentation for the Serverless Blog API. This API allows you to
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
 - [Endpoints](#endpoints)
-  - [Create a New Blog Post](#create-a-new-blog-post)
-  - [Get All Blog Posts](#get-all-blog-posts)
-  - [Get a Single Blog Post by ID](#get-a-single-blog-post-by-id)
-  - [Update a Blog Post](#update-a-blog-post)
-  - [Delete a Blog Post](#delete-a-blog-post)
+   - [Create a New Blog Post](#create-a-new-blog-post)
+   - [Get All Blog Posts](#get-all-blog-posts)
+   - [Get a Single Blog Post by ID](#get-a-single-blog-post-by-id)
+   - [Update a Blog Post](#update-a-blog-post)
+   - [Delete a Blog Post](#delete-a-blog-post)
+
 - [Error Handling](#error-handling)
 - [Deployment](#deployment)
 - [Conclusion](#conclusion)
@@ -31,44 +32,54 @@ To use the Serverless Blog API, you'll need the following:
 Follow these steps to set up and run the API:
 
 1. Clone the project repository:
-   ```sh
-   git clone https://github.com/jay-agrawat/serverless-blog-api
-   cd serverless-blog-api
-   ```
-   Note : Currently Above Repository is Private
+
+```sh
+git clone https://github.com/jay-agrawat/serverless-blog-api
+cd serverless-blog-api
+```
+
+Note : Currently Above Repository is Private
+
 2. Install the project dependencies:
-   ```sh
-   npm install
-   ```
+
+```sh
+npm install
+```
 
 3. Configure environment variables:
-   Create a `.env` file in the root directory and define the following variables:
-   ```
-   MONGODB_URI=your-mongodb-uri
-   ```
+Create a `.env` file in the root directory and define the following variables:
+
+```sh
+MONGODB_URI=your-mongodb-uri
+```
 
 4. Deploy the Cloud Functions:
-   Deploy the Cloud Functions using the Google Cloud SDK or other deployment methods.
-   ```
-   gcloud functions deploy blog_api_v1 --gen2 --runtime=nodejs20 --region=us-central1 --source=. --entry-point=app --trigger-http --allow-unauthenticated --memory 512Mi --max-instances=1
-   ```
+Deploy the Cloud Functions using the Google Cloud SDK or other deployment methods.
+
+```sh
+gcloud functions deploy blog_api_v1 --gen2 --runtime=nodejs20 --region=us-central1 --source=. --entry-point=app --trigger-http --allow-unauthenticated --memory 512Mi --max-instances=1
+```
 
 ## Endpoints
 
-**Base URL**: `https://us-central1-abiding-sunset-390217.cloudfunctions.net/blog_api_v1`
+__Base URL__: `https://us-central1-abiding-sunset-390217.cloudfunctions.net/blog_api_v1`
 
 ### Create a New Blog Post
 
 - Method: POST
+
 - Endpoint: `/posts`
+
 - Request Body:
-  ```json
-  {
-    "title": "Sample Title",
-    "content": "Sample Content",
-    "author": "John Doe"
-  }
-  ```
+
+```json
+{
+  "title": "Sample Title",
+  "content": "Sample Content",
+  "author": "John Doe"
+}
+```
+
 - Response: `201 Created` with the newly created post ID.
 
 ### Get All Blog Posts
@@ -86,14 +97,18 @@ Follow these steps to set up and run the API:
 ### Update a Blog Post
 
 - Method: PUT
+
 - Endpoint: `/posts/{postId}`
+
 - Request Body:
-  ```json
-  {
-    "title": "Updated Title",
-    "content": "Updated Content"
-  }
-  ```
+
+```json
+{
+  "title": "Updated Title",
+  "content": "Updated Content"
+}
+```
+
 - Response: `200 OK` with a success message.
 
 ### Delete a Blog Post
@@ -109,6 +124,17 @@ The API provides meaningful error responses for various scenarios, including mis
 ## Deployment
 
 Deploying the Cloud Functions can be done using the Google Cloud SDK or other deployment methods. Make sure to configure the necessary environment variables for connecting to your MongoDB instance.
+
+```json
+gcloud functions deploy hello-node-function \
+  --gen2 \      
+  --runtime=nodejs20 \
+  --region=us-central1 \
+  --source=. \
+  --entry-point=helloGET \
+  --trigger-http \
+ y--memory 512Mi --max-instances=1
+```
 
 ## Conclusion
 
